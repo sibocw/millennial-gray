@@ -31,7 +31,7 @@
       <!-- Profile -->
       <div class="profile">
         <div class="profile-photo">
-          <img src="{{ site.profile_photo | relative_url }}" alt="{{ site.author }}">
+          <img src="{{ site.profile_photo | relative_url }}" alt="{{ site.author | escape }}">
         </div>
         <div class="profile-name">{{ site.author }}</div>
         <div class="profile-tagline">{{ site.description | newline_to_br }}</div>
@@ -56,13 +56,13 @@
           {% if entry.link contains 'mailto:' %}
             {% assign _rev = entry.link | remove: 'mailto:' | split: '' | reverse | join: '' %}
             <a href="#" class="social-link" data-e="{{ _rev }}">
-              <i class="{{ entry.fa_logo }} fa-fw"></i>
+              <i class="{{ entry.fa_logo | escape }} fa-fw"></i>
               <span></span>
             </a>
           {% else %}
-            <a href="{{ entry.link }}" class="social-link" title="{{ entry.display_text }}"
+            <a href="{{ entry.link }}" class="social-link" title="{{ entry.display_text | escape }}"
                {% if entry.link contains 'http' %}target="_blank" rel="noopener"{% endif %}>
-              <i class="{{ entry.fa_logo }} fa-fw"></i>
+              <i class="{{ entry.fa_logo | escape }} fa-fw"></i>
               <span>{{ entry.display_text }}</span>
             </a>
           {% endif %}
@@ -130,7 +130,7 @@
       {% if current_url == '/' %}
       <div class="mobile-profile-card">
         <div class="profile-photo">
-          <img src="{{ site.profile_photo | relative_url }}" alt="{{ site.author }}">
+          <img src="{{ site.profile_photo | relative_url }}" alt="{{ site.author | escape }}">
         </div>
         <div class="profile-name">{{ site.author }}</div>
         <div class="profile-tagline">{{ site.description | newline_to_br }}</div>

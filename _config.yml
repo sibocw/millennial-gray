@@ -9,6 +9,8 @@ description: "Brief description\nMultiple lines allowed"
 #   display_text  — label shown next to the icon
 #   fa_logo       — Font Awesome 6 classes (see https://fontawesome.com/icons)
 #   link          — full URL, or mailto: address for email
+#                   (for mailto: entries, display_text is ignored — the address
+#                    itself is shown via JS to avoid exposing it in plain HTML)
 social_links:
   - display_text: doe@example.com
     fa_logo: fa-solid fa-envelope
