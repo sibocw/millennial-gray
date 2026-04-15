@@ -57,7 +57,7 @@ Add, remove, or reorder entries under `social_links`. Each entry needs a `displa
 
 ```yaml
 social_links:
-  - display_text: Email
+  - display_text: you@university.edu
     fa_logo: fa-solid fa-envelope
     link: mailto:you@university.edu
   - display_text: GitHub
