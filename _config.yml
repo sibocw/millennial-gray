@@ -1,0 +1,64 @@
+# ── Site info ─────────────────────────────────────────────────────
+title: Your Name
+author: Your Name
+affiliation: Title · Affiliation
+description: "Brief description\nMultiple lines allowed"
+
+# ── Social links ───────────────────────────────────────────────────
+# Add, remove, or reorder entries freely. Each entry requires:
+#   display_text  — label shown next to the icon
+#   fa_logo       — Font Awesome 6 classes (see https://fontawesome.com/icons)
+#   link          — full URL, or mailto: address for email
+social_links:
+  - display_text: doe@example.com
+    fa_logo: fa-solid fa-envelope
+    link: mailto:doe@example.com
+  - display_text: Google Scholar
+    fa_logo: fa-solid fa-graduation-cap
+    link: https://scholar.google.com/citations?user=XXXXXXXX
+  - display_text: GitHub
+    fa_logo: fa-brands fa-github
+    link: https://github.com/yourusername
+  - display_text: LinkedIn
+    fa_logo: fa-brands fa-linkedin
+    link: https://linkedin.com/in/your-username
+  - display_text: Bluesky
+    fa_logo: fa-brands fa-bluesky
+    link: https://bsky.app/profile/yourhandle.bsky.social
+
+# ── Profile photo & favicon ────────────────────────────────────────
+profile_photo: /assets/img/profile.jpg   # recommended: square, ≥ 400×400 px
+favicon:        /assets/img/favicon.png  # recommended: 32×32 or 64×64 px PNG
+
+# ── Navigation ────────────────────────────────────────────────────
+nav:
+  - title: About
+    url: /
+  - title: CV
+    url: /cv/
+  - title: Publications
+    url: /publications/
+  - title: News
+    url: /news/
+  - title: Another Page
+    url: /another-page/
+
+# ── Analytics ─────────────────────────────────────────────────────
+# google_analytics: G-XXXXXXXXXX
+
+# ── Build settings ────────────────────────────────────────────────
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .gitignore
+  - .bundle/
+  - .claude/
+  - .github/

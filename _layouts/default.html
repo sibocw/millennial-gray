@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title and page.title != site.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{{ site.favicon | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
+  {% endif %}
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── Sidebar (desktop) ──────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <!-- Profile -->
+      <div class="profile">
+        <div class="profile-photo">
+          <img src="{{ site.profile_photo | relative_url }}" alt="{{ site.author }}">
+        </div>
+        <div class="profile-name">{{ site.author }}</div>
+        <div class="profile-tagline">{{ site.description | newline_to_br }}</div>
+        {% if site.affiliation %}<div class="profile-affiliation">{{ site.affiliation }}</div>{% endif %}
+      </div>
+
+      <!-- Navigation -->
+      <nav class="sidebar-nav">
+        {% assign current_url = page.url | remove: 'index.html' %}
+        {% for item in site.nav %}
+          <a href="{{ item.url | relative_url }}"
+             class="nav-link{% if current_url == item.url %} active{% endif %}">
+            {{ item.title }}
+          </a>
+        {% endfor %}
+      </nav>
+
+      <!-- Social links + footer -->
+      <div class="sidebar-bottom">
+        <div class="social-links">
+          {% for entry in site.social_links %}
+          <a href="{{ entry.link }}"
+             class="social-link"
+             title="{{ entry.display_text }}"
+             {% if entry.link contains 'http' %}target="_blank" rel="noopener"{% endif %}>
+            <i class="{{ entry.fa_logo }} fa-fw"></i>
+            <span>{{ entry.display_text }}</span>
+          </a>
+          {% endfor %}
+        </div>
+        <footer class="sidebar-footer">
+          Built with the <a href="https://github.com/sibocw/millennial-gray" target="_blank" rel="noopener">Millennial Gray</a> template
+        </footer>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ── Mobile header ──────────────────────────────────── -->
+  <header class="mobile-header">
+    <a href="{{ '/' | relative_url }}" class="mobile-site-name">{{ site.author }}</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+
+    <!-- Profile strip -->
+    <div class="mobile-profile">
+      <span class="mobile-profile-name">{{ site.author }}</span>
+    </div>
+
+    <!-- Nav links -->
+    {% assign current_url = page.url | remove: 'index.html' %}
+    {% for item in site.nav %}
+      <a href="{{ item.url | relative_url }}"
+         class="nav-link{% if current_url == item.url %} active{% endif %}">
+        {{ item.title }}
+      </a>
+    {% endfor %}
+
+    <!-- Social links -->
+    <div class="mobile-social">
+      {% for entry in site.social_links %}
+      <a href="{{ entry.link }}"
+         class="social-link"
+         {% if entry.link contains 'http' %}target="_blank" rel="noopener"{% endif %}>
+        <i class="{{ entry.fa_logo }} fa-fw"></i>
+        <span>{{ entry.display_text }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </nav>
+
+  <!-- ── Main content ───────────────────────────────────── -->
+  <main class="main-content">
+    <article class="page-content">
+      {% assign current_url = page.url | remove: 'index.html' %}
+      {% if current_url == '/' %}
+      <div class="mobile-profile-card">
+        <div class="profile-photo">
+          <img src="{{ site.profile_photo | relative_url }}" alt="{{ site.author }}">
+        </div>
+        <div class="profile-name">{{ site.author }}</div>
+        <div class="profile-tagline">{{ site.description | newline_to_br }}</div>
+        {% if site.affiliation %}<div class="profile-affiliation">{{ site.affiliation }}</div>{% endif %}
+      </div>
+      {% endif %}
+      {{ content }}
+    </article>
+  </main>
+
+</div>
+
+<footer class="mobile-footer">
+  Built with the <a href="https://github.com/sibocw/millennial-gray" target="_blank" rel="noopener">Millennial Gray</a> template
+</footer>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
