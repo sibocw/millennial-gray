@@ -53,13 +53,19 @@
       <div class="sidebar-bottom">
         <div class="social-links">
           {% for entry in site.social_links %}
-          <a href="{{ entry.link }}"
-             class="social-link"
-             title="{{ entry.display_text }}"
-             {% if entry.link contains 'http' %}target="_blank" rel="noopener"{% endif %}>
-            <i class="{{ entry.fa_logo }} fa-fw"></i>
-            <span>{{ entry.display_text }}</span>
-          </a>
+          {% if entry.link contains 'mailto:' %}
+            {% assign _rev = entry.link | remove: 'mailto:' | split: '' | reverse | join: '' %}
+            <a href="#" class="social-link" data-e="{{ _rev }}">
+              <i class="{{ entry.fa_logo }} fa-fw"></i>
+              <span></span>
+            </a>
+          {% else %}
+            <a href="{{ entry.link }}" class="social-link" title="{{ entry.display_text }}"
+               {% if entry.link contains 'http' %}target="_blank" rel="noopener"{% endif %}>
+              <i class="{{ entry.fa_logo }} fa-fw"></i>
+              <span>{{ entry.display_text }}</span>
+            </a>
+          {% endif %}
           {% endfor %}
         </div>
         <footer class="sidebar-footer">
@@ -100,12 +106,19 @@
     <!-- Social links -->
     <div class="mobile-social">
       {% for entry in site.social_links %}
-      <a href="{{ entry.link }}"
-         class="social-link"
-         {% if entry.link contains 'http' %}target="_blank" rel="noopener"{% endif %}>
-        <i class="{{ entry.fa_logo }} fa-fw"></i>
-        <span>{{ entry.display_text }}</span>
-      </a>
+      {% if entry.link contains 'mailto:' %}
+        {% assign _rev = entry.link | remove: 'mailto:' | split: '' | reverse | join: '' %}
+        <a href="#" class="social-link" data-e="{{ _rev }}">
+          <i class="{{ entry.fa_logo }} fa-fw"></i>
+          <span></span>
+        </a>
+      {% else %}
+        <a href="{{ entry.link }}" class="social-link"
+           {% if entry.link contains 'http' %}target="_blank" rel="noopener"{% endif %}>
+          <i class="{{ entry.fa_logo }} fa-fw"></i>
+          <span>{{ entry.display_text }}</span>
+        </a>
+      {% endif %}
       {% endfor %}
     </div>
   </nav>
