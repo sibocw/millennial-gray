@@ -135,15 +135,17 @@ Delete the `.md` file and remove the corresponding entry from the `nav` list in 
 
 ## Deployment (GitHub Pages)
 
-The repo includes a GitHub Actions workflow at `.github/workflows/deploy.yml` that builds and deploys the site automatically on every push to `main`.
+The repo includes a GitHub Actions workflow at `.github/workflows/deploy.yml` that builds the site on every push to `main` and pushes the output to the `gh-pages` branch.
 
 **To enable:**
 
 1. Push the repo to GitHub.
-2. Go to **Settings → Pages**.
-3. Under *Source*, select **GitHub Actions**.
+2. Let the workflow run once — it will create the `gh-pages` branch automatically.
+3. Go to **Settings → Pages**, set *Source* to **Deploy from a branch**, and select the `gh-pages` branch.
 
-The site will be available at `https://yourusername.github.io/millennial-gray/` (or a custom domain if configured).
+The site will be available at `https://yourusername.github.io/your-repo-name/` (or a custom domain if configured).
+
+> **Note:** If your site is hosted at a subpath (e.g. `yourusername.github.io/your-repo-name`), add `baseurl: /your-repo-name` to `_config.yml` so asset and page links resolve correctly.
 
 ---
 
