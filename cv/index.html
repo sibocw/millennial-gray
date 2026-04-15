@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV · Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ── Sidebar (desktop) ──────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <!-- Profile -->
+      <div class="profile">
+        <div class="profile-photo">
+          <img src="/assets/img/profile.jpg" alt="Your Name">
+        </div>
+        <div class="profile-name">Your Name</div>
+        <div class="profile-tagline">Brief description<br />
+Multiple lines allowed</div>
+        <div class="profile-affiliation">Title · Affiliation</div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="sidebar-nav">
+        
+        
+          <a href="/"
+             class="nav-link">
+            About
+          </a>
+        
+          <a href="/cv/"
+             class="nav-link active">
+            CV
+          </a>
+        
+          <a href="/publications/"
+             class="nav-link">
+            Publications
+          </a>
+        
+          <a href="/news/"
+             class="nav-link">
+            News
+          </a>
+        
+          <a href="/another-page/"
+             class="nav-link">
+            Another Page
+          </a>
+        
+      </nav>
+
+      <!-- Social links + footer -->
+      <div class="sidebar-bottom">
+        <div class="social-links">
+          
+          <a href="mailto:doe@example.com"
+             class="social-link"
+             title="doe@example.com"
+             >
+            <i class="fa-solid fa-envelope fa-fw"></i>
+            <span>doe@example.com</span>
+          </a>
+          
+          <a href="https://scholar.google.com/citations?user=XXXXXXXX"
+             class="social-link"
+             title="Google Scholar"
+             target="_blank" rel="noopener">
+            <i class="fa-solid fa-graduation-cap fa-fw"></i>
+            <span>Google Scholar</span>
+          </a>
+          
+          <a href="https://github.com/yourusername"
+             class="social-link"
+             title="GitHub"
+             target="_blank" rel="noopener">
+            <i class="fa-brands fa-github fa-fw"></i>
+            <span>GitHub</span>
+          </a>
+          
+          <a href="https://linkedin.com/in/your-username"
+             class="social-link"
+             title="LinkedIn"
+             target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin fa-fw"></i>
+            <span>LinkedIn</span>
+          </a>
+          
+          <a href="https://bsky.app/profile/yourhandle.bsky.social"
+             class="social-link"
+             title="Bluesky"
+             target="_blank" rel="noopener">
+            <i class="fa-brands fa-bluesky fa-fw"></i>
+            <span>Bluesky</span>
+          </a>
+          
+        </div>
+        <footer class="sidebar-footer">
+          Built with the <a href="https://github.com/sibocw/millennial-gray" target="_blank" rel="noopener">Millennial Gray</a> template
+        </footer>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ── Mobile header ──────────────────────────────────── -->
+  <header class="mobile-header">
+    <a href="/" class="mobile-site-name">Your Name</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+
+    <!-- Profile strip -->
+    <div class="mobile-profile">
+      <span class="mobile-profile-name">Your Name</span>
+    </div>
+
+    <!-- Nav links -->
+    
+    
+      <a href="/"
+         class="nav-link">
+        About
+      </a>
+    
+      <a href="/cv/"
+         class="nav-link active">
+        CV
+      </a>
+    
+      <a href="/publications/"
+         class="nav-link">
+        Publications
+      </a>
+    
+      <a href="/news/"
+         class="nav-link">
+        News
+      </a>
+    
+      <a href="/another-page/"
+         class="nav-link">
+        Another Page
+      </a>
+    
+
+    <!-- Social links -->
+    <div class="mobile-social">
+      
+      <a href="mailto:doe@example.com"
+         class="social-link"
+         >
+        <i class="fa-solid fa-envelope fa-fw"></i>
+        <span>doe@example.com</span>
+      </a>
+      
+      <a href="https://scholar.google.com/citations?user=XXXXXXXX"
+         class="social-link"
+         target="_blank" rel="noopener">
+        <i class="fa-solid fa-graduation-cap fa-fw"></i>
+        <span>Google Scholar</span>
+      </a>
+      
+      <a href="https://github.com/yourusername"
+         class="social-link"
+         target="_blank" rel="noopener">
+        <i class="fa-brands fa-github fa-fw"></i>
+        <span>GitHub</span>
+      </a>
+      
+      <a href="https://linkedin.com/in/your-username"
+         class="social-link"
+         target="_blank" rel="noopener">
+        <i class="fa-brands fa-linkedin fa-fw"></i>
+        <span>LinkedIn</span>
+      </a>
+      
+      <a href="https://bsky.app/profile/yourhandle.bsky.social"
+         class="social-link"
+         target="_blank" rel="noopener">
+        <i class="fa-brands fa-bluesky fa-fw"></i>
+        <span>Bluesky</span>
+      </a>
+      
+    </div>
+  </nav>
+
+  <!-- ── Main content ───────────────────────────────────── -->
+  <main class="main-content">
+    <article class="page-content">
+      
+      
+      <h1 id="curriculum-vitae">Curriculum Vitae</h1>
+
+<h2 id="education">Education</h2>
+
+<h3 id="degree-1-yyyyyyyy">Degree 1 (YYYY–YYYY)</h3>
+<p>Specialization/major · Institution Name</p>
+
+<h3 id="degree-2-yyyyyyyy">Degree 2 (YYYY–YYYY)</h3>
+<p>Specialization/major · Institution Name</p>
+
+<h2 id="work-experience">Work Experience</h2>
+
+<h3 id="company-name--role-yyyypresent">Company Name — Role (YYYY–present)</h3>
+<p>City, Country</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+<h3 id="company-name--role-yyyyyyyy">Company Name — Role (YYYY–YYYY)</h3>
+<p>City, Country</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+<h2 id="awards">Awards</h2>
+
+<ul>
+  <li><strong>Award Name</strong> (YYYY) — Lorem ipsum dolor sit amet</li>
+  <li><strong>Award Name</strong> (YYYY) — Lorem ipsum dolor sit amet</li>
+</ul>
+
+<h2 id="additional-section">Additional Section</h2>
+
+<p>Add as many sections as you like (Grants, Fellowships, Service, Teaching, etc.) by adding a <code class="language-plaintext highlighter-rouge">## Section Name</code> heading. Each section can contain any Markdown — bullet lists, sub-headings, or plain paragraphs:</p>
+
+<ul>
+  <li>Point 1</li>
+  <li>Point 2</li>
+  <li>Point 3 <strong>with bold text</strong></li>
+</ul>
+
+<h3 id="sub-heading-yyyyyyyy">Sub-heading (YYYY–YYYY)</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+<p><strong>Plain paragraph</strong>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+
+<p>The content above is generated from the following Markdown:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> Point 1
+<span class="p">-</span> Point 2
+<span class="p">-</span> Point 3 <span class="gs">**with bold text**</span>
+
+<span class="gu">### Sub-heading (YYYY–YYYY)</span>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+<span class="gs">**Plain paragraph**</span>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+</code></pre></div></div>
+
+    </article>
+  </main>
+
+</div>
+
+<footer class="mobile-footer">
+  Built with the <a href="https://github.com/sibocw/millennial-gray" target="_blank" rel="noopener">Millennial Gray</a> template
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
