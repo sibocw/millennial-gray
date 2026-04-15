@@ -1,14 +1,14 @@
-// Reconstruct email links stored in reverse for obfuscation
-document.querySelectorAll('a[data-e]').forEach(function (el) {
-  var email = el.dataset.e.split('').reverse().join('');
-  el.querySelector('span').textContent = email;
-  el.addEventListener('click', function (e) {
-    e.preventDefault();
-    window.location = 'mailto:' + email;
-  });
-});
-
 document.addEventListener('DOMContentLoaded', function () {
+  // Reconstruct email links stored in reverse for obfuscation
+  document.querySelectorAll('a[data-e]').forEach(function (el) {
+    var email = el.dataset.e.split('').reverse().join('');
+    el.querySelector('span').textContent = email;
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.location = 'mailto:' + email;
+    });
+  });
+
   var toggle = document.getElementById('menuToggle');
   var nav    = document.getElementById('mobileNav');
 
