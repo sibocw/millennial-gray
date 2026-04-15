@@ -27,8 +27,8 @@ social_links:
     link: https://bsky.app/profile/yourhandle.bsky.social
 
 # ── Profile photo & favicon ────────────────────────────────────────
-profile_photo: /assets/img/profile.jpg   # recommended: square, ≥ 400×400 px
-favicon:        /assets/img/favicon.png  # recommended: 32×32 or 64×64 px PNG
+profile_photo: /assets/img/profile.jpg  # recommended: square, ≥ 400×400 px
+favicon: /assets/img/favicon.png  # recommended: 32×32 or 64×64 px PNG
 
 # ── Navigation ────────────────────────────────────────────────────
 nav:
@@ -44,7 +44,7 @@ nav:
     url: /another-page/
 
 # ── Analytics ─────────────────────────────────────────────────────
-# google_analytics: G-XXXXXXXXXX
+# google_analytics: G-XXXXXXXXXX  # uncomment to enable Google Analytics
 
 # ── Build settings ────────────────────────────────────────────────
 markdown: kramdown
@@ -55,10 +55,5 @@ kramdown:
 permalink: pretty
 
 exclude:
-  - Gemfile
-  - Gemfile.lock
   - vendor/
-  - .gitignore
-  - .bundle/
-  - .claude/
-  - .github/
+  - README.md
